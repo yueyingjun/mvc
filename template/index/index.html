@@ -6,13 +6,27 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="{CSS_PATH}/index.css">
-
+    <link rel="stylesheet" href="{CSS_PATH}/index/index.css">
     <script src="{JS_PATH}/index.js"></script>
 </head>
 <body>
-{foreach $result as $v}
-   <li>{$v["cname"]}</li>
-{/foreach}
+
+<div class="top">
+    <div class="content">
+        <span class="left">欢迎来到xx博客</span>
+
+        <div class="right">
+            <a href="index.php?m=index&f=login">登陆</a>
+            <a href="index.php?m=index&f=login&a=reg">注册</a>
+            <a href="">发表文章</a>
+        </div>
+    </div>
+</div>
+
+<header>
+
+</header>
+
+
 </body>
 </html>

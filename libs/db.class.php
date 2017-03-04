@@ -5,7 +5,7 @@ class db
     public $hostname = "localhost";
     private $username = "root";
     private $password = "root";
-    public $dbname = "w1610";
+    public $dbname = "blog1";
     public $opts;
     public $tablename = "";
     public $connect;

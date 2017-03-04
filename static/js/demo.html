@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script src="jquery.validate.js"></script>
+    <script src="jquery.metadata.js"></script>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#myform").validate({
+                rules:{
+                    user:{
+                        required:true,
+                        minlength:7,
+                        remote:{
+                            url:"demo.php",
+                            type:"post",
+                            dataType:"json",
+                            data:{
+                                user:function(){
+                                    return $("input[name=user]").val()
+                                }
+                            }
+
+                        }
+                    },
+                    pass:{
+                        required:true,
+                        minlength:7
+
+                    },
+                    pass2:{
+                        required:true,
+                        minlength:7,
+                        equalTo:"#pass"
+
+                    },
+                    sex:{
+                        required:true
+                    },
+                    "like[]":{
+                        required:true,
+                        minlength:2
+                    }
+
+
+                },
+                messages:{
+                    user:{
+                        required:"这一项必填",
+                        minlength:"最少输入7个字符",
+                        remote:"已存在"
+                    },
+                    pass:{
+                        required:"密码必填",
+            minlength:"密码最少输入7个字符"
+                    },
+                    pass2:{
+                        required:"必须再次输入密码",
+                        minlength:"不能少于7位",
+                        equalTo:"两次不一致"
+
+                    },
+                    sex:{
+                        required:"必选的"
+                    },
+                    "like[]":{
+                        required:"必选",
+                        minlength:"至少两项"
+                    }
+
+                }
+            });
+        })
+    </script>
+
+</head>
+<body>
+
+<form action="demo.php" id="myform">
+   用户名: <input type="text" name="user"><br>
+   密码: <input type="text" name="pass" id="pass"><br>
+    确认密码: <input type="text" name="pass2"><br>
+
+     性别: 女:<input type="radio" name="sex" value="0">
+    男:<input type="radio" name="sex" value="1">
+    保密:<input type="radio" name="sex" value="2">
+    <label for="sex" generated="true" class="error"></label>
+    <br>
+    爱好:
+
+    学习:<input type="checkbox" name="like[]" value="study">
+    睡觉:<input type="checkbox" name="like[]" value="sleep">
+    吃饭:<input type="checkbox" name="like[]" value="eat">
+    <label for="like[]" generated="true" class="error"></label><br>
+
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

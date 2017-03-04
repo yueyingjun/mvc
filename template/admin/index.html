@@ -6,13 +6,60 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        body{
-            color:red;
-        }
-    </style>
+    <link rel="stylesheet" href="{CSS_PATH}/adminIndex.css">
 </head>
 <body>
-     后台
+<div class="header">
+    <h1>{$aname}欢迎来到后台管理系统</h1>
+    <a href="index.php?m=admin&f=index&a=logout">退出</a>
+</div>
+<div class="main">
+
+    <div class="left">
+        <ul>
+            <li>用户管理
+                <ul>
+                    <li>
+                        <a href="" target="right">添加用户</a>
+                    </li>
+                    <li>
+                        <a href="" target="right">管理用户</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>栏目管理
+                <ul>
+                    <li>
+                        <a href="" target="right">添加栏目</a>
+                    </li>
+                    <li>
+                        <a href="" target="right">管理栏目</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li>栏目管理
+                <ul>
+                    <li>
+                        <a href="" target="right">添加内容</a>
+                    </li>
+                    <li>
+                        <a href="" target="right">管理内容</a>
+                    </li>
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="right">
+        <iframe src="" frameborder="0" name="right">
+
+        </iframe>
+    </div>
+</div>
+
 </body>
 </html>
