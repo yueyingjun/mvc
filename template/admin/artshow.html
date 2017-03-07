@@ -41,15 +41,18 @@
                 操作
             </th>
         </tr>
+<!--
 
+select * from shows inner join user on shows.uid=user.uid;
+-->
         {foreach  $result as $v}
         <tr>
             <td>{$v["sid"]}</td>
             <td>{$v["stitle"]}</td>
-            <td>{$v["uid"]}</td>
+            <td>{$v["uname"]}</td>
             <td>{$v["hits"]}</td>
             <td>{$v["good"]}</td>
-            <td>{$v["statu"]}</td>
+            <td>{if $v["statu"]==0}未审核{else}审核{/if}</td>
             <td>{$v["stime"]}</td>
             <td>
                 <a href="">查看</a>
@@ -58,6 +61,10 @@
         </tr>
 
         {/foreach}
+
+
     </table>
+
+    {$pages}
 </body>
 </html>

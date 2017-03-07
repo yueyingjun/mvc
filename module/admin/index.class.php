@@ -55,6 +55,7 @@
             exit;
         }
 
+
         $aname=P("aname");
         $apass=md5(P("apass"));
         $db=new db("admin");

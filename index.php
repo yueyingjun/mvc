@@ -18,6 +18,7 @@ define("FONT_PATH",ROOT_URL."/static/font");
 include LIBS_URL."/db.class.php";
 include LIBS_URL."/session.class.php";
 require LIBS_URL."/code.class.php";
+require LIBS_URL."/pages.class.php";
 require LIBS_URL."/infinite.class.php";
 require LIBS_URL."/indexMain.class.php";
 require LIBS_URL."/functions.php";
