@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+
+</head>
+<body>
+<form action="index.php?m=admin&f=category&a=add" method="post">
+    <div class="form-group">
+        <label for="pid">选择分类</label>
+        <select class="form-control" name="pid" id="pid">
+            <option value="0">一级分类</option>
+            {$tree}
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="cname">分类名称</label>
+        <input type="text" class="form-control" id="cname" name="cname" placeholder="标题">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</body>
+</html>

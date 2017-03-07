@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-04 03:03:41
+/* Smarty version 3.1.30, created on 2017-03-06 01:53:45
   from "/Users/gaoxin/Documents/www/w1610/mvc/template/index/login.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58ba207de0d382_91215396',
+  'unifunc' => 'content_58bcb319867a66_33936796',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7f712ad87f6b5f7abceea127bac0d86c6b6c9032' => 
     array (
       0 => '/Users/gaoxin/Documents/www/w1610/mvc/template/index/login.html',
-      1 => 1488593016,
+      1 => 1488609298,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58ba207de0d382_91215396 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58bcb319867a66_33936796 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="en">
@@ -36,9 +36,9 @@ function content_58ba207de0d382_91215396 (Smarty_Internal_Template $_smarty_tpl)
 <body>
 <div class="box">
     <h3>登录页</h3>
-    <form action="index.php?m=admin&f=index&a=check" method="post">
-        用户名:<input type="text" name="aname" autocomplete="off"><br><br>
-        密&nbsp;&nbsp;&nbsp;码:<input type="text" name="apass" autocomplete="off"><br><br>
+    <form action="index.php?m=index&f=login&a=check" method="post">
+        用户名:<input type="text" name="uname" autocomplete="off"><br><br>
+        密&nbsp;&nbsp;&nbsp;码:<input type="text" name="upass" autocomplete="off"><br><br>
 
 
         <input type="text" name="code" size="10" >

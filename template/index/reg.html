@@ -7,18 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{CSS_PATH}/login.css">
+    <script src="{JS_PATH}/jquery.js"></script>
+    <script src="{JS_PATH}/jquery.validate.js"></script>
+    <script src="{JS_PATH}/jquery.metadata.js"></script>
+    <script src="{JS_PATH}/reg.js"></script>
+
 </head>
 <body>
 <div class="box">
     <h3>注册页</h3>
-    <form action="index.php?m=admin&f=index&a=check" method="post">
-        用户名:<input type="text" name="aname" autocomplete="off"><br><br>
-        密&nbsp;&nbsp;&nbsp;码:<input type="text" name="apass" autocomplete="off"><br><br>
+    <form action="index.php?m=index&f=login&a=addReg" method="post" id="myform">
+        用户名:<input type="text" name="uname" autocomplete="off"><br><br>
+        密&nbsp;&nbsp;&nbsp;码:<input type="text" name="upass" autocomplete="off" id="pass"><br><br>
+        确认密码:<input type="text" name="upass2" autocomplete="off"><br><br>
 
 
-        <input type="text" name="code" size="10" >
+        <input type="text" name="code" size="10">
         <img src="index.php?m=admin&f=index&a=code" alt="" width="100" height="30" onclick="this.src='index.php?m=admin&f=index&a=code&'+Math.random()" style="vertical-align:middle"><br><br>
-
 
         <input type="submit" value="注册">
     </form>

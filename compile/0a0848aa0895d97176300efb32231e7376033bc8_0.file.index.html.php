@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-04 02:43:01
+/* Smarty version 3.1.30, created on 2017-03-07 03:03:22
   from "/Users/gaoxin/Documents/www/w1610/mvc/template/admin/index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58ba1ba5a38ea3_04919505',
+  'unifunc' => 'content_58be14ea9ab421_68455337',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a0848aa0895d97176300efb32231e7376033bc8' => 
     array (
       0 => '/Users/gaoxin/Documents/www/w1610/mvc/template/admin/index.html',
-      1 => 1488591777,
+      1 => 1488851880,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58ba1ba5a38ea3_04919505 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58be14ea9ab421_68455337 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,7 +49,7 @@ function content_58ba1ba5a38ea3_04919505 (Smarty_Internal_Template $_smarty_tpl)
                         <a href="" target="right">添加用户</a>
                     </li>
                     <li>
-                        <a href="" target="right">管理用户</a>
+                        <a href="index.php?m=admin&f=user&a=select" target="right">管理用户</a>
                     </li>
                 </ul>
             </li>
@@ -57,7 +57,7 @@ function content_58ba1ba5a38ea3_04919505 (Smarty_Internal_Template $_smarty_tpl)
             <li>栏目管理
                 <ul>
                     <li>
-                        <a href="" target="right">添加栏目</a>
+                        <a href="index.php?m=admin&f=category&a=showadd" target="right">添加栏目</a>
                     </li>
                     <li>
                         <a href="" target="right">管理栏目</a>
@@ -72,7 +72,7 @@ function content_58ba1ba5a38ea3_04919505 (Smarty_Internal_Template $_smarty_tpl)
                         <a href="" target="right">添加内容</a>
                     </li>
                     <li>
-                        <a href="" target="right">管理内容</a>
+                        <a href="index.php?m=admin&f=art&a=show" target="right">管理内容</a>
                     </li>
                 </ul>
             </li>

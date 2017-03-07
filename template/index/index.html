@@ -16,16 +16,33 @@
         <span class="left">欢迎来到xx博客</span>
 
         <div class="right">
-            <a href="index.php?m=index&f=login">登陆</a>
+            {if !empty($indexLogin)}
+              <span>
+                  欢迎 {$uname}回来
+                  <a href="index.php?m=index&f=login&a=logout">退出</a>
+              </span>
+            {else}
+            <a href="index.php?m=index&f=login&a=init">登陆</a>
             <a href="index.php?m=index&f=login&a=reg">注册</a>
-            <a href="">发表文章</a>
+            {/if}
+
+            <a href="index.php?m=index&f=art&a=show">发表文章</a>
         </div>
     </div>
 </div>
 
-<header>
+<ul>
+    {foreach $result as $v}
+    <li>
+        <h1>{$v["stitle"]}</h1>
+        <p>
+            {substr($v["scon"],0,9)}
+        </p>
 
-</header>
+    </li>
+    {/foreach}
+
+</ul>
 
 
 </body>

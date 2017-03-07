@@ -1,7 +1,7 @@
 <?php
 class code
 {
-    private $letter = "abcdefgABCDEFG";
+    private $letter = "abcdefgABCDEFG3456789hjkmnHJKMNQrRsStTuUvVwWxXYyZz";
     private $currentLetter;
     public $letterUrl;
     private $letterNum = 4;

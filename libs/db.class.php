@@ -56,6 +56,8 @@ class db
             $values=$arr[1];
             $sql = "(" . $keys . ") values (" . $values . ")";
         }
+
+
          $this->opts["filed"]=$sql;
         return $this;
     }
@@ -67,7 +69,7 @@ class db
           $this->filed($info);
           $sql="select ".$this->opts["filed"]." from ".$this->tablename. " ".$this->opts["where"]." ".$this->opts["order"]." ".$this->opts["limit"];
       }
-
+      $arr=array();
       $result=$this->connect->query($sql);
       while ($row=$result->fetch_assoc()){
         $arr[]=$row;
@@ -98,6 +100,10 @@ class db
         }else{
             $sql="delete from ".$this->tablename." ".$this->opts["where"];
         }
+
+        $this->connect->query($sql);
+        return $this->connect->affected_rows;
+
     }
 
     function update($info=""){
@@ -128,13 +134,11 @@ class db
             }
         }
 
-
         $this->connect->query($sql);
         return $this->connect->affected_rows;
     }
 
 }
-
 
 $obj=new db("category");
 
