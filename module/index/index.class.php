@@ -7,15 +7,11 @@
 
       function init(){
 
-          $this->smarty->assign("indexLogin",$this->session->get("indexLogin"));
-
-          $this->smarty->assign("uname",$this->session->get("uname"));
-
           if($this->session->get("indexLogin")=="yes"){
               $this->session->set("welcome","yes");
           }
 
-          $result=$this->db->where("statu=1")->select();
+          $result=$this->db->where("statu=3")->select();
 
           $this->smarty->assign("result",$result);
 

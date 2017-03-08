@@ -20,6 +20,9 @@
                 id
             </th>
             <th>
+                所属分类
+            </th>
+            <th>
                 标题
             </th>
             <th>
@@ -48,14 +51,25 @@ select * from shows inner join user on shows.uid=user.uid;
         {foreach  $result as $v}
         <tr>
             <td>{$v["sid"]}</td>
+            <td>{$v["cname"]}</td>
+
             <td>{$v["stitle"]}</td>
             <td>{$v["uname"]}</td>
             <td>{$v["hits"]}</td>
             <td>{$v["good"]}</td>
-            <td>{if $v["statu"]==0}未审核{else}审核{/if}</td>
+            <td>{if $v["statu"]==0}
+                未审核
+                {elseif $v["statu"]==1}
+                审核中
+                {elseif $v["statu"]==2}
+                审核未通过
+                {elseif $v["statu"]==3}
+                审核通过
+                {/if}
+            </td>
             <td>{$v["stime"]}</td>
             <td>
-                <a href="">查看</a>
+                <a href="index.php?m=admin&f=art&a=info&sid={$v['sid']}">查看</a>
                 <a href="">删除</a>
             </td>
         </tr>

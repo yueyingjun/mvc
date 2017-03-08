@@ -1,54 +1,46 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-07 02:36:31
+/* Smarty version 3.1.30, created on 2017-03-08 10:36:36
   from "/Users/gaoxin/Documents/www/w1610/mvc/template/index/artShow.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58be0e9f3fe854_28417111',
+  'unifunc' => 'content_58bfd0a44cebb0_58857365',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dba730928cfac5f0a639076078a1b637ef0c6ba7' => 
     array (
       0 => '/Users/gaoxin/Documents/www/w1610/mvc/template/index/artShow.html',
-      1 => 1488850105,
+      1 => 1488940608,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:index/header.html' => 1,
   ),
 ),false)) {
-function content_58be0e9f3fe854_28417111 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58bfd0a44cebb0_58857365 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:index/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?php echo CSS_PATH;?>
+
+<link rel="stylesheet" href="<?php echo CSS_PATH;?>
 /bootstrap.min.css">
-    <?php echo '<script'; ?>
+<?php echo '<script'; ?>
  src="<?php echo EDIT_PATH;?>
 /ueditor.config.js"><?php echo '</script'; ?>
 >
 
-    <?php echo '<script'; ?>
+<?php echo '<script'; ?>
  src="<?php echo EDIT_PATH;?>
 /ueditor.all.min.js"><?php echo '</script'; ?>
 >
 
-    <?php echo '<script'; ?>
+<?php echo '<script'; ?>
  type="text/javascript" charset="utf-8" src="<?php echo EDIT_PATH;?>
 /lang/zh-cn/zh-cn.js"><?php echo '</script'; ?>
 >
-
-</head>
-<body>
 <!--
  分类表
 

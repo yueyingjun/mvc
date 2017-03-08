@@ -1,44 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{CSS_PATH}/index/index.css">
-    <script src="{JS_PATH}/index.js"></script>
-</head>
-<body>
-
-<div class="top">
-    <div class="content">
-        <span class="left">欢迎来到xx博客</span>
-
-        <div class="right">
-            {if !empty($indexLogin)}
-              <span>
-                  欢迎 {$uname}回来
-                  <a href="index.php?m=index&f=login&a=logout">退出</a>
-              </span>
-            {else}
-            <a href="index.php?m=index&f=login&a=init">登陆</a>
-            <a href="index.php?m=index&f=login&a=reg">注册</a>
-            {/if}
-
-            <a href="index.php?m=index&f=art&a=show">发表文章</a>
-        </div>
-    </div>
-</div>
-
+{include file="index/header.html"}
 <ul>
     {foreach $result as $v}
     <li>
-        <h1>{$v["stitle"]}</h1>
-        <p>
-            {substr($v["scon"],0,9)}
-        </p>
+        <h1>
+            <a href="index.php?m=index&f=con&a=show&id={$v['sid']}">{$v["stitle"]}</a>
 
+        </h1>
     </li>
     {/foreach}
 

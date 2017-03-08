@@ -1,0 +1,111 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<link rel="stylesheet" href="{CSS_PATH}/show.css">
+<script src="{JS_PATH}/jquery.js"></script>
+<script src="{JS_PATH}/show.js"></script>
+
+
+  <div class="container">
+      <h1 class="text-center">
+          {$result["stitle"]}
+          <br>
+          <span class="author">作者:
+              <span class="name author-name" attr="{$result['uid']}">
+                  {$result["uname"]}
+              </span>
+          </span>
+          <span class="time">时间:
+              <span class="date">
+                  {$result["stime"]}
+              </span>
+          </span>
+      </h1>
+      <div class="con">
+      {$result["scon"]}
+      </div>
+      <!--交互-->
+
+      {if $guanzhu=="true"}
+      <a href="javascript:;" class="btn btn-success guanzhu" style="display:none">关注</a>
+      <a href="javascript:;" class="btn btn-success quxiaoguanzhu">取消关注</a>
+      {elseif $guanzhu=="false"}
+      <a href="javascript:;" class="btn btn-success guanzhu">关注</a>
+      <a href="javascript:;" class="btn btn-success quxiaoguanzhu" style="display: none">取消关注</a>
+      {/if}
+
+
+
+
+
+      <a href="javascript:;" class="btn btn-success">收藏</a><br><br>
+
+      <div class="submit submit1">
+
+          <textarea  class="form-control" rows="3"></textarea><br>
+          <a href="javascript:;" class="btn btn-primary">留言</a>
+          <a href="javascript:;" class="btn btn-danger">取消</a>
+      </div>
+
+      <div class="message">
+          <h3>共有xxx条留言</h3>
+          <div class="liuyanbox">
+             <div class="liuyan">
+             <div class="userinfo">
+                 <div class="phone">
+
+                 </div>
+                 <div class="info">
+                       <div class="name">xxx</div>
+                     <div class="time">2000-20-20</div>
+                 </div>
+             </div>
+              <div class="liuyancon">
+                    <p>sakjd</p>
+                    <p>sakjd</p>
+                    <p>sakjd</p>
+                    <p>sakjd</p>
+              </div>
+              <a href="javascript:;" class="btn btn-default replyBtn replyBtn1">回复1</a>
+          </div>
+             <div class="reply">
+
+            <div class="replylist">
+              <div class="replycon">
+                  <span>xxxx:</span>
+                  <div class="replyinfo">
+                      sakdjaksjdk
+                      sjadhjksah
+                      dksajdkas
+
+                  </div>
+
+              </div>
+
+                <div class="replystate">
+                    <div class="time">2000-22-22</div>
+                    <a href="javascript:;" class="btn btn-default replyBtn replyBtn2">回复2</a>
+                </div>
+
+            </div>
+
+          </div>
+
+              <div class="submit submit2">
+
+                  <textarea  class="form-control" rows="3"></textarea><br>
+                  <a href="javascript:;" class="btn btn-primary">回复</a>
+                  <a href="javascript:;" class="btn btn-danger">取消</a>
+              </div>
+          </div>
+
+      </div>
+
+  </div>
+
+   <div class="mask">
+
+   </div>
+   {include file="index/notice.html"}
+   <div class="notice">操作成功</div>
+</body>
+</html>

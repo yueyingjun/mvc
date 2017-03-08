@@ -35,7 +35,8 @@
                      $this->session->set("uname",$uname);
                      $this->session->set("uid",$v["uid"]);
 
-                     $this->jump("index.php","登陆成功");
+                     $url=$this->session->get("near")?$this->session->get("near"):"index.php";
+                     $this->jump($url,"登陆成功");
                      exit;
                  }
              }

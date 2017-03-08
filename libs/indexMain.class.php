@@ -5,6 +5,9 @@
           $this->smarty->setCompileDir("compile");
           $this->smarty->setTemplateDir("template");
           $this->session=new session();
+          $this->smarty->assign("indexLogin",$this->session->get("indexLogin"));
+
+          $this->smarty->assign("uname",$this->session->get("uname"));
       }
       function checkLogin(){
           $session=$this->session;

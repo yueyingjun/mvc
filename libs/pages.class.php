@@ -1,16 +1,11 @@
 <?php
 class pages{
-
     public $total;//数据总量
     public $pageNum=10;//每页显示的条数
     public $current;//当前的页数
     public $pageNums;//总页数
     public $param;//地址栏默认的参数
-
     public $limit;
-
-
-
     function __construct($total,$pageNum=10,$param="pages"){
             $this->total=$total;
             $this->pageNum=$pageNum;
@@ -48,7 +43,12 @@ class pages{
 
         for($i=$start;$i<$end;$i++){
            $n=$i+1;
-          $str.="[<a href='{$url}{$i}'>".$n."</a>]";
+           if($i==$this->current){
+               $color="style='color:red'";
+           }else{
+               $color="style='color:#000'";
+           }
+          $str.="[<a href='{$url}{$i}' {$color}>".$n."</a>]";
         }
 
 

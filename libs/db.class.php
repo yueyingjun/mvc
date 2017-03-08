@@ -63,6 +63,8 @@ class db
     }
     function select($info=""){
 
+
+
       if(strpos($info,"elect")){
           $sql=$info;
       }else{
