@@ -10,7 +10,7 @@
           {$result["stitle"]}
           <br>
           <span class="author">作者:
-              <span class="name author-name" attr="{$result['uid']}">
+              <span class="name author-name" attr="{$result['uid']}" sid="{$result['sid']}">
                   {$result["uname"]}
               </span>
           </span>
@@ -31,23 +31,47 @@
       {elseif $guanzhu=="false"}
       <a href="javascript:;" class="btn btn-success guanzhu">关注</a>
       <a href="javascript:;" class="btn btn-success quxiaoguanzhu" style="display: none">取消关注</a>
+      {elseif $guanzhu=="nosession"}
+      <a href="javascript:;" class="btn btn-success guanzhu">关注</a>
+      <a href="javascript:;" class="btn btn-success quxiaoguanzhu" style="display: none">取消关注</a>
+
+      {/if}
+
+
+
+      {if $love=="true"}
+      <a href="javascript:;" class="btn btn-success loveBtn" style="display:none">收藏</a>
+      <a href="javascript:;" class="btn btn-success loveCancel" >取消收藏</a>
+      {elseif $love=="false"}
+      <a href="javascript:;" class="btn btn-success loveBtn" >收藏</a>
+      <a href="javascript:;" class="btn btn-success loveCancel" style="display:none">取消收藏</a>
+      {elseif $love=="nosession"}
+      <a href="javascript:;" class="btn btn-success loveBtn" >收藏</a>
+      <a href="javascript:;" class="btn btn-success loveCancel" style="display:none">取消收藏</a>
+
       {/if}
 
 
 
 
 
-      <a href="javascript:;" class="btn btn-success">收藏</a><br><br>
+
+      <br><br>
 
       <div class="submit submit1">
 
-          <textarea  class="form-control" rows="3"></textarea><br>
-          <a href="javascript:;" class="btn btn-primary">留言</a>
+          <textarea  class="form-control mcon" rows="3"></textarea><br>
+          <a href="javascript:;" class="btn btn-primary message-btn">留言</a>
           <a href="javascript:;" class="btn btn-danger">取消</a>
       </div>
 
       <div class="message">
-          <h3>共有xxx条留言</h3>
+
+          {if count($arr)<1}
+          <h3>没有留言</h3>
+          {else}
+          <h3>共有 <span>{count($liuyanArr)}</span>条留言</h3>
+          {foreach $arr as $v}
           <div class="liuyanbox">
              <div class="liuyan">
              <div class="userinfo">
@@ -55,38 +79,35 @@
 
                  </div>
                  <div class="info">
-                       <div class="name">xxx</div>
-                     <div class="time">2000-20-20</div>
+                       <div class="name">{$v["uname"]}</div>
+                     <div class="time">{$v["mtime"]}</div>
                  </div>
              </div>
               <div class="liuyancon">
-                    <p>sakjd</p>
-                    <p>sakjd</p>
-                    <p>sakjd</p>
-                    <p>sakjd</p>
+                    {$v["mcon"]}
               </div>
-              <a href="javascript:;" class="btn btn-default replyBtn replyBtn1">回复1</a>
+              <a href="javascript:;" class="btn btn-default replyBtn replyBtn1" uid2="{$v['uid1']}" pid="{$v['mid']}">回复1</a>
           </div>
              <div class="reply">
 
+                 {foreach $v["son"] as $v1}
             <div class="replylist">
               <div class="replycon">
-                  <span>xxxx:</span>
+                  <span>{$v1["uname"]}</span>
                   <div class="replyinfo">
-                      sakdjaksjdk
-                      sjadhjksah
-                      dksajdkas
-
+                     {$v1["mcon"]}
                   </div>
 
               </div>
 
                 <div class="replystate">
-                    <div class="time">2000-22-22</div>
-                    <a href="javascript:;" class="btn btn-default replyBtn replyBtn2">回复2</a>
+                    <div class="time">{$v1["mtime"]}</div>
+                    <a href="javascript:;" class="btn btn-default replyBtn replyBtn2" uid2="{$v1['uid1']}" pid="{$v['mid']}">回复2</a>
                 </div>
 
             </div>
+
+                 {/foreach}
 
           </div>
 
@@ -97,6 +118,10 @@
                   <a href="javascript:;" class="btn btn-danger">取消</a>
               </div>
           </div>
+          {/foreach}
+
+          {/if}
+
 
       </div>
 

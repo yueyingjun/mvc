@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-08 11:12:49
+/* Smarty version 3.1.30, created on 2017-03-09 11:00:37
   from "/Users/gaoxin/Documents/www/w1610/mvc/template/index/show.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bfd9213cb8a4_71857107',
+  'unifunc' => 'content_58c127c5345180_44301129',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86e782a6e4588ecd54020c2717da0c3c3ce8f660' => 
     array (
       0 => '/Users/gaoxin/Documents/www/w1610/mvc/template/index/show.html',
-      1 => 1488967964,
+      1 => 1489052869,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:index/notice.html' => 1,
   ),
 ),false)) {
-function content_58bfd9213cb8a4_71857107 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58c127c5345180_44301129 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:index/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -47,6 +47,7 @@ $_smarty_tpl->_subTemplateRender("file:index/header.html", $_smarty_tpl->cache_i
           <br>
           <span class="author">作者:
               <span class="name author-name" attr="<?php echo $_smarty_tpl->tpl_vars['result']->value['uid'];?>
+" sid="<?php echo $_smarty_tpl->tpl_vars['result']->value['sid'];?>
 ">
                   <?php echo $_smarty_tpl->tpl_vars['result']->value["uname"];?>
 
@@ -71,23 +72,52 @@ $_smarty_tpl->_subTemplateRender("file:index/header.html", $_smarty_tpl->cache_i
       <?php } elseif ($_smarty_tpl->tpl_vars['guanzhu']->value == "false") {?>
       <a href="javascript:;" class="btn btn-success guanzhu">关注</a>
       <a href="javascript:;" class="btn btn-success quxiaoguanzhu" style="display: none">取消关注</a>
+      <?php } elseif ($_smarty_tpl->tpl_vars['guanzhu']->value == "nosession") {?>
+      <a href="javascript:;" class="btn btn-success guanzhu">关注</a>
+      <a href="javascript:;" class="btn btn-success quxiaoguanzhu" style="display: none">取消关注</a>
+
+      <?php }?>
+
+
+
+      <?php if ($_smarty_tpl->tpl_vars['love']->value == "true") {?>
+      <a href="javascript:;" class="btn btn-success loveBtn" style="display:none">收藏</a>
+      <a href="javascript:;" class="btn btn-success loveCancel" >取消收藏</a>
+      <?php } elseif ($_smarty_tpl->tpl_vars['love']->value == "false") {?>
+      <a href="javascript:;" class="btn btn-success loveBtn" >收藏</a>
+      <a href="javascript:;" class="btn btn-success loveCancel" style="display:none">取消收藏</a>
+      <?php } elseif ($_smarty_tpl->tpl_vars['love']->value == "nosession") {?>
+      <a href="javascript:;" class="btn btn-success loveBtn" >收藏</a>
+      <a href="javascript:;" class="btn btn-success loveCancel" style="display:none">取消收藏</a>
+
       <?php }?>
 
 
 
 
 
-      <a href="javascript:;" class="btn btn-success">收藏</a><br><br>
+
+      <br><br>
 
       <div class="submit submit1">
 
-          <textarea  class="form-control" rows="3"></textarea><br>
-          <a href="javascript:;" class="btn btn-primary">留言</a>
+          <textarea  class="form-control mcon" rows="3"></textarea><br>
+          <a href="javascript:;" class="btn btn-primary message-btn">留言</a>
           <a href="javascript:;" class="btn btn-danger">取消</a>
       </div>
 
       <div class="message">
-          <h3>共有xxx条留言</h3>
+
+          <?php if (count($_smarty_tpl->tpl_vars['arr']->value) < 1) {?>
+          <h3>没有留言</h3>
+          <?php } else { ?>
+          <h3>共有 <span><?php echo count($_smarty_tpl->tpl_vars['liuyanArr']->value);?>
+</span>条留言</h3>
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arr']->value, 'v');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
+?>
           <div class="liuyanbox">
              <div class="liuyan">
              <div class="userinfo">
@@ -95,38 +125,54 @@ $_smarty_tpl->_subTemplateRender("file:index/header.html", $_smarty_tpl->cache_i
 
                  </div>
                  <div class="info">
-                       <div class="name">xxx</div>
-                     <div class="time">2000-20-20</div>
+                       <div class="name"><?php echo $_smarty_tpl->tpl_vars['v']->value["uname"];?>
+</div>
+                     <div class="time"><?php echo $_smarty_tpl->tpl_vars['v']->value["mtime"];?>
+</div>
                  </div>
              </div>
               <div class="liuyancon">
-                    <p>sakjd</p>
-                    <p>sakjd</p>
-                    <p>sakjd</p>
-                    <p>sakjd</p>
+                    <?php echo $_smarty_tpl->tpl_vars['v']->value["mcon"];?>
+
               </div>
-              <a href="javascript:;" class="btn btn-default replyBtn replyBtn1">回复1</a>
+              <a href="javascript:;" class="btn btn-default replyBtn replyBtn1" uid2="<?php echo $_smarty_tpl->tpl_vars['v']->value['uid1'];?>
+" pid="<?php echo $_smarty_tpl->tpl_vars['v']->value['mid'];?>
+">回复1</a>
           </div>
              <div class="reply">
 
+                 <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['v']->value["son"], 'v1');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['v1']->value) {
+?>
             <div class="replylist">
               <div class="replycon">
-                  <span>xxxx:</span>
+                  <span><?php echo $_smarty_tpl->tpl_vars['v1']->value["uname"];?>
+</span>
                   <div class="replyinfo">
-                      sakdjaksjdk
-                      sjadhjksah
-                      dksajdkas
+                     <?php echo $_smarty_tpl->tpl_vars['v1']->value["mcon"];?>
 
                   </div>
 
               </div>
 
                 <div class="replystate">
-                    <div class="time">2000-22-22</div>
-                    <a href="javascript:;" class="btn btn-default replyBtn replyBtn2">回复2</a>
+                    <div class="time"><?php echo $_smarty_tpl->tpl_vars['v1']->value["mtime"];?>
+</div>
+                    <a href="javascript:;" class="btn btn-default replyBtn replyBtn2" uid2="<?php echo $_smarty_tpl->tpl_vars['v1']->value['uid1'];?>
+" pid="<?php echo $_smarty_tpl->tpl_vars['v']->value['mid'];?>
+">回复2</a>
                 </div>
 
             </div>
+
+                 <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
 
           </div>
 
@@ -137,6 +183,15 @@ $_smarty_tpl->_subTemplateRender("file:index/header.html", $_smarty_tpl->cache_i
                   <a href="javascript:;" class="btn btn-danger">取消</a>
               </div>
           </div>
+          <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+
+          <?php }?>
+
 
       </div>
 
