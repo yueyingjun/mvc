@@ -136,6 +136,7 @@ class db
             }
         }
 
+
         $this->connect->query($sql);
         return $this->connect->affected_rows;
     }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-09 11:00:37
+/* Smarty version 3.1.30, created on 2017-03-10 04:00:31
   from "/Users/gaoxin/Documents/www/w1610/mvc/template/index/show.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58c127c5345180_44301129',
+  'unifunc' => 'content_58c216cfb13a77_92743893',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86e782a6e4588ecd54020c2717da0c3c3ce8f660' => 
     array (
       0 => '/Users/gaoxin/Documents/www/w1610/mvc/template/index/show.html',
-      1 => 1489052869,
+      1 => 1489114795,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:index/notice.html' => 1,
   ),
 ),false)) {
-function content_58c127c5345180_44301129 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58c216cfb13a77_92743893 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:index/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -56,6 +56,13 @@ $_smarty_tpl->_subTemplateRender("file:index/header.html", $_smarty_tpl->cache_i
           <span class="time">时间:
               <span class="date">
                   <?php echo $_smarty_tpl->tpl_vars['result']->value["stime"];?>
+
+              </span>
+          </span>
+
+          <span class="hits">点击量:
+              <span class="hitnum">
+                   <?php echo $_smarty_tpl->tpl_vars['result']->value["hits"];?>
 
               </span>
           </span>
@@ -108,8 +115,69 @@ $_smarty_tpl->_subTemplateRender("file:index/header.html", $_smarty_tpl->cache_i
 
       <div class="message">
 
+          <div class="liuyanbox" style="display: none">
+              <div class="liuyan">
+                  <div class="userinfo">
+                      <div class="phone">
+
+                      </div>
+                      <div class="info">
+                          <div class="name">11</div>
+                          <div class="time">11</div>
+                      </div>
+                  </div>
+                  <div class="liuyancon">
+                      11
+                  </div>
+                  <a href="javascript:;" class="btn btn-default replyBtn replyBtn1" uid2="11" pid="11">回复1</a>
+              </div>
+              <div class="reply">
+
+                  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['v']->value["son"], 'v1');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['v1']->value) {
+?>
+                  <div class="replylist">
+                      <div class="replycon">
+                          <span><?php echo $_smarty_tpl->tpl_vars['v1']->value["uname"];?>
+</span>
+                          <div class="replyinfo">
+                              <?php echo $_smarty_tpl->tpl_vars['v1']->value["mcon"];?>
+
+                          </div>
+
+                      </div>
+
+                      <div class="replystate">
+                          <div class="time"><?php echo $_smarty_tpl->tpl_vars['v1']->value["mtime"];?>
+</div>
+                          <a href="javascript:;" class="btn btn-default replyBtn replyBtn2" uid2="<?php echo $_smarty_tpl->tpl_vars['v1']->value['uid1'];?>
+" pid="<?php echo $_smarty_tpl->tpl_vars['v']->value['mid'];?>
+">回复2</a>
+                      </div>
+
+                  </div>
+
+                  <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+
+              </div>
+
+              <div class="submit submit2">
+
+                  <textarea  class="form-control" rows="3"></textarea><br>
+                  <a href="javascript:;" class="btn btn-primary replyBtn3">回复</a>
+                  <a href="javascript:;" class="btn btn-danger">取消</a>
+              </div>
+          </div>
+
           <?php if (count($_smarty_tpl->tpl_vars['arr']->value) < 1) {?>
-          <h3>没有留言</h3>
+          <h3>没有 <span></span> 留言</h3>
           <?php } else { ?>
           <h3>共有 <span><?php echo count($_smarty_tpl->tpl_vars['liuyanArr']->value);?>
 </span>条留言</h3>
@@ -179,7 +247,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
               <div class="submit submit2">
 
                   <textarea  class="form-control" rows="3"></textarea><br>
-                  <a href="javascript:;" class="btn btn-primary">回复</a>
+                  <a href="javascript:;" class="btn btn-primary replyBtn3">回复</a>
                   <a href="javascript:;" class="btn btn-danger">取消</a>
               </div>
           </div>

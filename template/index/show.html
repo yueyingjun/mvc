@@ -19,6 +19,12 @@
                   {$result["stime"]}
               </span>
           </span>
+
+          <span class="hits">点击量:
+              <span class="hitnum">
+                   {$result["hits"]}
+              </span>
+          </span>
       </h1>
       <div class="con">
       {$result["scon"]}
@@ -67,8 +73,55 @@
 
       <div class="message">
 
+          <div class="liuyanbox" style="display: none">
+              <div class="liuyan">
+                  <div class="userinfo">
+                      <div class="phone">
+
+                      </div>
+                      <div class="info">
+                          <div class="name">11</div>
+                          <div class="time">11</div>
+                      </div>
+                  </div>
+                  <div class="liuyancon">
+                      11
+                  </div>
+                  <a href="javascript:;" class="btn btn-default replyBtn replyBtn1" uid2="11" pid="11">回复1</a>
+              </div>
+              <div class="reply">
+
+                  {foreach $v["son"] as $v1}
+                  <div class="replylist">
+                      <div class="replycon">
+                          <span>{$v1["uname"]}</span>
+                          <div class="replyinfo">
+                              {$v1["mcon"]}
+                          </div>
+
+                      </div>
+
+                      <div class="replystate">
+                          <div class="time">{$v1["mtime"]}</div>
+                          <a href="javascript:;" class="btn btn-default replyBtn replyBtn2" uid2="{$v1['uid1']}" pid="{$v['mid']}">回复2</a>
+                      </div>
+
+                  </div>
+
+                  {/foreach}
+
+              </div>
+
+              <div class="submit submit2">
+
+                  <textarea  class="form-control" rows="3"></textarea><br>
+                  <a href="javascript:;" class="btn btn-primary replyBtn3">回复</a>
+                  <a href="javascript:;" class="btn btn-danger">取消</a>
+              </div>
+          </div>
+
           {if count($arr)<1}
-          <h3>没有留言</h3>
+          <h3>没有 <span></span> 留言</h3>
           {else}
           <h3>共有 <span>{count($liuyanArr)}</span>条留言</h3>
           {foreach $arr as $v}
@@ -114,7 +167,7 @@
               <div class="submit submit2">
 
                   <textarea  class="form-control" rows="3"></textarea><br>
-                  <a href="javascript:;" class="btn btn-primary">回复</a>
+                  <a href="javascript:;" class="btn btn-primary replyBtn3">回复</a>
                   <a href="javascript:;" class="btn btn-danger">取消</a>
               </div>
           </div>
